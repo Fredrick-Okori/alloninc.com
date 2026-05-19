@@ -1,0 +1,336 @@
+export type ContentBlock =
+  | { type: "p"; text: string }
+  | { type: "h2"; text: string }
+  | { type: "h3"; text: string }
+  | { type: "quote"; text: string; attribution?: string }
+  | { type: "list"; items: string[] };
+
+export type Post = {
+  slug: string;
+  title: string;
+  date: string;
+  category: string;
+  readTime: number;
+  excerpt: string;
+  content: ContentBlock[];
+};
+
+export const posts: Post[] = [
+  {
+    slug: "why-structure-outlasts-strategy",
+    title: "Why Structure Outlasts Strategy",
+    date: "12 May 2026",
+    category: "Organisational Design",
+    readTime: 7,
+    excerpt:
+      "Every few years a business rewrites its strategy. The structure beneath it rarely changes. That asymmetry is the source of most persistent underperformance.",
+    content: [
+      {
+        type: "p",
+        text: "There is a ritual most organisations perform with great seriousness and almost no lasting effect. It is called strategic planning. The executive team retreats for two days, a consulting firm facilitates, slides are produced, and a new direction is declared. Twelve months later, the business behaves in largely the same way it did before the retreat.",
+      },
+      {
+        type: "p",
+        text: "The strategy is not the problem. Most strategies are reasonable. The problem is that strategy is a set of intentions, and intentions do not change behaviour. Structure changes behaviour.",
+      },
+      {
+        type: "h2",
+        text: "The Asymmetry Nobody Addresses",
+      },
+      {
+        type: "p",
+        text: "Strategy changes every three to five years on average. Organisational structure changes far less frequently — sometimes never, across a leadership generation. The result is a persistent gap between what the business says it is trying to do and the actual machinery it uses to do it.",
+      },
+      {
+        type: "p",
+        text: "This gap is not a failure of commitment. It is a failure of translation. The people in the room when the strategy was written understood what was meant. The organisation as a whole received a document. A document cannot restructure authority, redesign incentives, or reorder decision rights. Only deliberate structural change can do that.",
+      },
+      {
+        type: "quote",
+        text: "A strategy without a structural translation is a hypothesis without an experiment. You have stated what you believe. You have not changed the conditions under which you will find out if you are right.",
+      },
+      {
+        type: "h2",
+        text: "What Structure Actually Does",
+      },
+      {
+        type: "p",
+        text: "Structure is the set of arrangements that determine how work gets done when no one is watching. It includes the formal hierarchy, but it is not limited to it. It includes where decisions are made and who has the authority to make them. It includes what gets measured, what gets rewarded, and what gets escalated. It includes the interfaces between departments — the handoffs, the shared accountability zones, the places where value is either transferred cleanly or lost.",
+      },
+      {
+        type: "p",
+        text: "When structure is well-designed, the organisation tends toward the desired outcome even in the absence of supervision. When it is poorly designed, the organisation tends toward a different outcome regardless of how clear the strategy is or how capable the people are.",
+      },
+      {
+        type: "h3",
+        text: "Three structural failures that persist across industries",
+      },
+      {
+        type: "list",
+        items: [
+          "Authority distributed without clarity — everyone is accountable, which means no one is",
+          "Incentives misaligned with stated direction — the strategy says one thing, the bonus structure rewards another",
+          "Interfaces undefined — departments hand off work without agreed standards, and value disappears in the gap",
+        ],
+      },
+      {
+        type: "h2",
+        text: "The Practical Implication",
+      },
+      {
+        type: "p",
+        text: "If you have written a new strategy, the first question to ask is not whether it is correct. It is probably reasonable. The first question is: what would have to be true about the structure for this strategy to actually take hold? Which decisions need to move? Which authorities need to be clarified? Which interfaces need to be redesigned?",
+      },
+      {
+        type: "p",
+        text: "Those are structural questions, and they are harder than strategy questions. Strategy allows you to remain in the realm of intention. Structure forces you to make specific changes to specific arrangements — changes that will inconvenience specific people, including sometimes yourself.",
+      },
+      {
+        type: "p",
+        text: "This is why strategy is revised regularly and structure is not. The revision of structure costs something. The revision of strategy costs very little, and for a time, it produces the same feeling of progress.",
+      },
+      {
+        type: "quote",
+        text: "The organisation that changes its strategy without changing its structure has performed an expensive administrative exercise. It has not changed.",
+      },
+    ],
+  },
+  {
+    slug: "the-decision-trap",
+    title: "The Decision Trap: When Smart People Build Dumb Systems",
+    date: "28 Apr 2026",
+    category: "Leadership Architecture",
+    readTime: 8,
+    excerpt:
+      "The most common leadership problem is not a lack of capability. It is capable people operating inside decision structures that systematically produce poor outcomes.",
+    content: [
+      {
+        type: "p",
+        text: "It is tempting, when a leadership team consistently makes poor decisions, to conclude that the leaders are not good enough. Sometimes that is the correct diagnosis. More often, it is not.",
+      },
+      {
+        type: "p",
+        text: "The more common problem is structural. The leaders are capable. The system within which they make decisions is not. And because the system is invisible — it is simply 'the way things are done here' — its role in producing poor outcomes goes largely unexamined.",
+      },
+      {
+        type: "h2",
+        text: "What a Decision Structure Actually Is",
+      },
+      {
+        type: "p",
+        text: "A decision structure is not a flowchart. It is the totality of conditions under which decisions are made: who is in the room, what information is present, what pressures are active, what the incentives are for the person deciding, how much time is available, and what happens to people who make different kinds of mistakes.",
+      },
+      {
+        type: "p",
+        text: "Poor decision structures are not designed to produce poor decisions. They produce poor decisions as a byproduct of other features — features that were installed for other reasons and never examined for their effect on decision quality.",
+      },
+      {
+        type: "quote",
+        text: "You can replace every leader in an organisation and if you leave the decision structure intact, the same kinds of decisions will recur. The system produces the outcome, not the individual.",
+      },
+      {
+        type: "h2",
+        text: "The Four Most Common Structural Failures",
+      },
+      {
+        type: "h3",
+        text: "1. Information asymmetry at the point of decision",
+      },
+      {
+        type: "p",
+        text: "The person with the authority to decide does not have the information needed to decide well. The person with the information does not have the authority. This is not a communication problem — it is a structural one. The decision right and the information are in different places, and no amount of briefing fully closes the gap.",
+      },
+      {
+        type: "h3",
+        text: "2. Incentive misalignment at the point of decision",
+      },
+      {
+        type: "p",
+        text: "The decision-maker is evaluated on metrics that favour a particular choice, regardless of what is actually best for the organisation. They are not acting irrationally. They are acting rationally within a structure that has defined their interests incorrectly.",
+      },
+      {
+        type: "h3",
+        text: "3. Asymmetric consequences",
+      },
+      {
+        type: "p",
+        text: "The consequences for one type of error — say, approving something that fails — are much more severe than for another type — say, blocking something that would have succeeded. When this asymmetry exists, the rational response is excessive caution, which looks like indecision but is actually a structural output.",
+      },
+      {
+        type: "h3",
+        text: "4. Consensus requirements without accountability",
+      },
+      {
+        type: "p",
+        text: "Decisions require broad agreement to move, but no single person is accountable for the outcome. The result is decisions that are made slowly, watered down to satisfy the broadest coalition, and owned by no one — which means when they fail, the failure is absorbed collectively and nothing changes.",
+      },
+      {
+        type: "h2",
+        text: "The Diagnostic Question",
+      },
+      {
+        type: "p",
+        text: "When you observe a pattern of poor decisions — not one bad call, but a recurring type of error — the right question is not 'who made these decisions' but 'what does the structure of our decision-making reward?'",
+      },
+      {
+        type: "p",
+        text: "The answer is almost always more specific than people expect. And fixing it requires not better people, but better architecture: moving decision rights closer to information, aligning incentives with actual objectives, and ensuring that the person who decides is also the person who bears the consequence of deciding.",
+      },
+    ],
+  },
+  {
+    slug: "culture-decks-and-culture",
+    title: "On the Gap Between Culture Decks and Culture",
+    date: "14 Apr 2026",
+    category: "Culture & Behaviour",
+    readTime: 6,
+    excerpt:
+      "Culture is not what is written in the handbook. It is what is rewarded in practice. The gap between the two is one of the most expensive problems in business, and among the least honestly addressed.",
+    content: [
+      {
+        type: "p",
+        text: "The culture deck is a relatively recent phenomenon. It began as an honest attempt to articulate what an organisation valued and to use those values to attract and retain people who shared them. It has since become something closer to a ritual — a document produced at some point, updated occasionally, and referenced frequently in recruitment materials and infrequently in actual decisions.",
+      },
+      {
+        type: "p",
+        text: "The gap between the culture deck and the actual culture is not a problem of sincerity. The leaders who wrote the values usually meant them. The problem is that meaning something and structuring an organisation to produce it are entirely different activities.",
+      },
+      {
+        type: "h2",
+        text: "What Culture Actually Is",
+      },
+      {
+        type: "p",
+        text: "Culture is the sum of what is actually rewarded, tolerated, and penalised in an organisation. Not what is said to be rewarded — what is rewarded. The two frequently diverge, and when they do, people are not confused for long. They observe what happens to the people around them and adjust accordingly.",
+      },
+      {
+        type: "p",
+        text: "If a company states that it values transparency but managers who surface bad news are consistently passed over for promotion, the culture is not one of transparency. If a company states that it values collaboration but individual performance metrics dominate the review process, the culture is not collaborative. These are not failures of culture. They are the culture — accurately described.",
+      },
+      {
+        type: "quote",
+        text: "Employees do not read the values document and decide how to behave. They observe what happens to people who behave in various ways, and they respond to that signal. The signal is the culture.",
+      },
+      {
+        type: "h2",
+        text: "Why the Gap Persists",
+      },
+      {
+        type: "p",
+        text: "The gap between stated and actual culture persists because closing it is structurally costly. To align actual culture with stated values requires changing what is measured, what is rewarded, what is promoted, and what is tolerated. It requires making decisions that disadvantage people who produce results through means inconsistent with the stated values — even when those results are genuinely valuable.",
+      },
+      {
+        type: "p",
+        text: "Most organisations are not willing to pay that cost. It is easier to revise the culture deck. A better-written document produces the sensation of cultural progress without requiring any of the structural changes that would actually produce it.",
+      },
+      {
+        type: "h2",
+        text: "The Structural Approach",
+      },
+      {
+        type: "p",
+        text: "Closing the gap requires treating culture as an output of structural design rather than a product of intention. The question is not 'what do we believe?' but 'what does our current structure reward, and is that what we want to reward?'",
+      },
+      {
+        type: "list",
+        items: [
+          "What behaviours does the performance review process actually incentivise?",
+          "What gets promoted — and what pattern of behaviour do those promotions signal to the rest of the organisation?",
+          "What gets tolerated that contradicts the stated values — and what does that tolerance communicate?",
+          "Where are the stated values actually load-bearing in real decisions, and where are they decorative?",
+        ],
+      },
+      {
+        type: "p",
+        text: "These questions are uncomfortable to answer honestly. That discomfort is diagnostic. Where it is hardest to answer the question honestly is where the gap between stated and actual culture is widest.",
+      },
+    ],
+  },
+  {
+    slug: "what-scaling-actually-breaks",
+    title: "What Scaling Actually Breaks",
+    date: "2 Apr 2026",
+    category: "Growth",
+    readTime: 9,
+    excerpt:
+      "Growth does not break organisations. Growth reveals what was already broken but sustainable at smaller scale. The structures that worked at twenty people become the constraints at two hundred.",
+    content: [
+      {
+        type: "p",
+        text: "There is a particular kind of business problem that appears to be caused by growth. Revenue is increasing, headcount is expanding, and things that used to work reliably are beginning to fail. The natural diagnosis is that the business has grown too fast, or that it needs better processes, or that the early team is no longer the right fit.",
+      },
+      {
+        type: "p",
+        text: "Sometimes those diagnoses are correct. More often, growth has not created new problems. It has amplified existing ones — structural vulnerabilities that were tolerable at smaller scale and intolerable at larger scale.",
+      },
+      {
+        type: "h2",
+        text: "The Informal Structures That Carry Early Businesses",
+      },
+      {
+        type: "p",
+        text: "Every organisation begins with informal structure. Decisions are made through proximity and relationship. Authority is distributed by presence — whoever is in the room when the decision needs to be made tends to make it. Accountability is maintained through mutual visibility — everyone can see what everyone else is doing, so failures are quickly identified and informally addressed.",
+      },
+      {
+        type: "p",
+        text: "This informal structure works well at small scale. It is fast, flexible, and requires very little overhead. It also contains structural vulnerabilities that are invisible at small scale because the informal mechanisms compensate for them.",
+      },
+      {
+        type: "quote",
+        text: "The structures that carry an early business are rarely designed. They accumulate. By the time the business is large enough for the accumulated structure to become a problem, it has also become invisible — it is simply how things are done.",
+      },
+      {
+        type: "h2",
+        text: "What Actually Breaks at Scale",
+      },
+      {
+        type: "h3",
+        text: "Decision-making without formal authority",
+      },
+      {
+        type: "p",
+        text: "At twenty people, informal authority works. The founder is present in most decisions. Escalation is a conversation. At two hundred people, the same informality produces bottlenecks, inconsistency, and paralysis. Decisions that should be made at the point of action are escalated because no one has been given explicit authority to make them.",
+      },
+      {
+        type: "h3",
+        text: "Accountability without structure",
+      },
+      {
+        type: "p",
+        text: "At small scale, everyone knows what everyone else is responsible for. At large scale, the boundaries between roles and departments become ambiguous — not because people are unclear about their own responsibilities, but because the interfaces have never been formally defined. Value falls into the gaps.",
+      },
+      {
+        type: "h3",
+        text: "Culture maintained through proximity",
+      },
+      {
+        type: "p",
+        text: "The culture of an early business is transmitted directly — through observation of the founders, through the daily interactions of a small team. When the team grows beyond direct observation, culture can no longer be transmitted by proximity. It must be structurally embedded — in hiring, performance management, and the decisions leaders visibly make. If it has not been structurally embedded, it degrades.",
+      },
+      {
+        type: "h2",
+        text: "The Redesign Imperative",
+      },
+      {
+        type: "p",
+        text: "The error most growing organisations make is treating scaling as an operational problem rather than a structural one. They hire more people, install more processes, and buy more software. These things help at the margins. They do not address the underlying issue, which is that the informal structures of the early business have become the ceiling of the scaled business.",
+      },
+      {
+        type: "p",
+        text: "The alternative is a deliberate redesign of the structures that govern how work gets done — not as a one-time project, but as a recurring discipline. The question at every significant scale threshold is not 'how do we do more of what we are doing?' but 'what needs to be redesigned for the next order of magnitude to be achievable?'",
+      },
+      {
+        type: "p",
+        text: "Growth will expose the answer. The less painful path is to ask the question before it does.",
+      },
+    ],
+  },
+];
+
+export function getPost(slug: string): Post | undefined {
+  return posts.find((p) => p.slug === slug);
+}
+
+export function getAllSlugs(): string[] {
+  return posts.map((p) => p.slug);
+}
