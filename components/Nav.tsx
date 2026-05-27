@@ -32,7 +32,7 @@ export default function Nav() {
         href="/"
         className="font-serif font-[200] text-[1.5rem] text-linen no-underline tracking-tight opacity-75"
       >
-        Alloninc
+        Allon
       </Link>
 
       <ul className="hidden md:flex gap-10 list-none m-0 p-0">
