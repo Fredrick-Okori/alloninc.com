@@ -1,4 +1,4 @@
-import { supabase } from "./supabase";
+import { getSupabase } from "./supabase";
 
 export type ContentBlock =
   | { type: "p"; text: string }
@@ -21,7 +21,7 @@ export type Post = {
 //   slug, title, date, category, "readTime", excerpt, content, created_at
 
 export async function getPosts(): Promise<Post[]> {
-  const { data, error } = await supabase
+  const { data, error } = await getSupabase()
     .from("posts")
     .select("slug, title, date, category, readTime, excerpt, content")
     .order("created_at", { ascending: false });
@@ -34,7 +34,7 @@ export async function getPosts(): Promise<Post[]> {
 }
 
 export async function getPost(slug: string): Promise<Post | undefined> {
-  const { data, error } = await supabase
+  const { data, error } = await getSupabase()
     .from("posts")
     .select("slug, title, date, category, readTime, excerpt, content")
     .eq("slug", slug)
@@ -45,7 +45,7 @@ export async function getPost(slug: string): Promise<Post | undefined> {
 }
 
 export async function getAllSlugs(): Promise<string[]> {
-  const { data, error } = await supabase
+  const { data, error } = await getSupabase()
     .from("posts")
     .select("slug");
 
@@ -54,7 +54,7 @@ export async function getAllSlugs(): Promise<string[]> {
 }
 
 export async function createPost(post: Post): Promise<void> {
-  const { error } = await supabase.from("posts").insert({
+  const { error } = await getSupabase().from("posts").insert({
     slug: post.slug,
     title: post.title,
     date: post.date,
@@ -71,7 +71,7 @@ export async function updatePost(
   slug: string,
   data: Partial<Omit<Post, "slug">>
 ): Promise<boolean> {
-  const { error } = await supabase
+  const { error } = await getSupabase()
     .from("posts")
     .update(data)
     .eq("slug", slug);
@@ -81,7 +81,7 @@ export async function updatePost(
 }
 
 export async function deletePost(slug: string): Promise<boolean> {
-  const { error } = await supabase
+  const { error } = await getSupabase()
     .from("posts")
     .delete()
     .eq("slug", slug);
@@ -91,7 +91,7 @@ export async function deletePost(slug: string): Promise<boolean> {
 }
 
 export async function slugExists(slug: string): Promise<boolean> {
-  const { count, error } = await supabase
+  const { count, error } = await getSupabase()
     .from("posts")
     .select("slug", { count: "exact", head: true })
     .eq("slug", slug);
