@@ -3,18 +3,16 @@ import Link from "next/link";
 import Grain from "@/components/Grain";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { getPost, getAllSlugs, type ContentBlock } from "@/lib/posts";
+import { getPost, type ContentBlock } from "@/lib/posts";
 import type { Metadata } from "next";
+
+export const dynamic = "force-dynamic";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export async function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) return {};
   return {
     title: `${post.title} — Alloninc`,
@@ -93,7 +91,7 @@ function renderBlock(block: ContentBlock, i: number) {
 
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) notFound();
 
   return (
@@ -102,10 +100,8 @@ export default async function PostPage({ params }: Props) {
       <Nav />
 
       <main className="min-h-screen bg-navy">
-        {/* Article header */}
         <div className="bg-navy2 pt-[88px]">
           <div className="px-6 md:px-16 pt-16 pb-16 max-w-[860px]">
-            {/* Back link */}
             <Link
               href="/blog"
               className="inline-flex items-center gap-2 text-[0.72rem] tracking-[0.18em] uppercase text-linen/40 no-underline hover:text-amber transition-colors mb-12 group"
@@ -114,7 +110,6 @@ export default async function PostPage({ params }: Props) {
               All Notes
             </Link>
 
-            {/* Category + meta */}
             <div className="flex items-center gap-5 mb-7">
               <span className="text-[0.72rem] tracking-[0.22em] uppercase text-amber">
                 {post.category}
@@ -129,7 +124,6 @@ export default async function PostPage({ params }: Props) {
               </span>
             </div>
 
-            {/* Title */}
             <h1
               className="font-serif font-[300] leading-[1.08] tracking-[-0.025em] text-linen mb-8"
               style={{ fontSize: "clamp(2rem, 4.5vw, 3.8rem)" }}
@@ -137,7 +131,6 @@ export default async function PostPage({ params }: Props) {
               {post.title}
             </h1>
 
-            {/* Excerpt */}
             <p
               className="font-serif font-[300] italic text-linen/55 leading-[1.6] max-w-[52ch]"
               style={{ fontSize: "clamp(1rem, 1.5vw, 1.2rem)" }}
@@ -147,16 +140,13 @@ export default async function PostPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Amber rule */}
         <div className="h-px bg-gradient-to-r from-transparent via-amber/30 to-transparent" />
 
-        {/* Article body */}
         <div className="px-6 md:px-16 py-16">
           <div className="max-w-[680px]">
             {post.content.map((block, i) => renderBlock(block, i))}
           </div>
 
-          {/* Footer nav */}
           <div className="max-w-[680px] mt-20 pt-10 border-t border-linen/[0.07] flex items-center justify-between">
             <Link
               href="/blog"

@@ -2,8 +2,10 @@ import Link from "next/link";
 import Grain from "@/components/Grain";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { posts } from "@/lib/posts";
+import { getPosts } from "@/lib/posts";
 import type { Metadata } from "next";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Notes — Alloninc",
@@ -11,7 +13,8 @@ export const metadata: Metadata = {
     "Writing on organisational structure, decision-making, culture, and the architecture of business.",
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await getPosts();
   const [featured, ...rest] = posts;
 
   return (
@@ -20,7 +23,6 @@ export default function BlogPage() {
       <Nav />
 
       <main className="min-h-screen bg-navy pt-[88px]">
-        {/* Page header */}
         <div className="px-6 md:px-16 pt-16 pb-0">
           <div className="flex items-baseline gap-[18px] mb-16 border-b border-linen/[0.07] pb-10">
             <span className="font-serif text-[0.95rem] text-amber opacity-50">04</span>
@@ -35,50 +37,50 @@ export default function BlogPage() {
         </div>
 
         <div className="px-6 md:px-16 pb-24">
-          {/* Featured post */}
-          <Link
-            href={`/blog/${featured.slug}`}
-            className="group block mb-0.5 no-underline"
-          >
-            <article className="grid md:grid-cols-[1fr_auto] gap-10 bg-linen/[0.03] border border-linen/[0.07] border-l-2 border-l-transparent hover:border-l-amber hover:bg-linen/[0.05] transition-all duration-300 p-10 md:p-14">
-              <div>
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="text-[0.7rem] tracking-[0.22em] uppercase text-amber">
-                    {featured.category}
-                  </span>
-                  <span className="w-5 h-px bg-linen/20" />
-                  <span className="text-[0.7rem] tracking-[0.14em] text-linen/35">
-                    Featured
+          {featured && (
+            <Link
+              href={`/blog/${featured.slug}`}
+              className="group block mb-0.5 no-underline"
+            >
+              <article className="grid md:grid-cols-[1fr_auto] gap-10 bg-linen/[0.03] border border-linen/[0.07] border-l-2 border-l-transparent hover:border-l-amber hover:bg-linen/[0.05] transition-all duration-300 p-10 md:p-14">
+                <div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-[0.7rem] tracking-[0.22em] uppercase text-amber">
+                      {featured.category}
+                    </span>
+                    <span className="w-5 h-px bg-linen/20" />
+                    <span className="text-[0.7rem] tracking-[0.14em] text-linen/35">
+                      Featured
+                    </span>
+                  </div>
+                  <h2
+                    className="font-serif font-[300] leading-[1.15] tracking-[-0.02em] text-linen mb-5 group-hover:text-amber transition-colors duration-300"
+                    style={{ fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)" }}
+                  >
+                    {featured.title}
+                  </h2>
+                  <p className="text-[0.95rem] leading-[1.85] text-linen/55 max-w-[60ch] mb-8">
+                    {featured.excerpt}
+                  </p>
+                  <div className="flex items-center gap-6">
+                    <span className="text-[0.72rem] tracking-[0.15em] uppercase text-linen/35">
+                      {featured.date}
+                    </span>
+                    <span className="w-1 h-1 rounded-full bg-linen/20" />
+                    <span className="text-[0.72rem] tracking-[0.15em] uppercase text-linen/35">
+                      {featured.readTime} min read
+                    </span>
+                  </div>
+                </div>
+                <div className="hidden md:flex items-end">
+                  <span className="text-[0.74rem] tracking-[0.18em] uppercase text-amber border-b border-amber/40 pb-0.5 group-hover:border-amber transition-colors">
+                    Read →
                   </span>
                 </div>
-                <h2
-                  className="font-serif font-[300] leading-[1.15] tracking-[-0.02em] text-linen mb-5 group-hover:text-amber transition-colors duration-300"
-                  style={{ fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)" }}
-                >
-                  {featured.title}
-                </h2>
-                <p className="text-[0.95rem] leading-[1.85] text-linen/55 max-w-[60ch] mb-8">
-                  {featured.excerpt}
-                </p>
-                <div className="flex items-center gap-6">
-                  <span className="text-[0.72rem] tracking-[0.15em] uppercase text-linen/35">
-                    {featured.date}
-                  </span>
-                  <span className="w-1 h-1 rounded-full bg-linen/20" />
-                  <span className="text-[0.72rem] tracking-[0.15em] uppercase text-linen/35">
-                    {featured.readTime} min read
-                  </span>
-                </div>
-              </div>
-              <div className="hidden md:flex items-end">
-                <span className="text-[0.74rem] tracking-[0.18em] uppercase text-amber border-b border-amber/40 pb-0.5 group-hover:border-amber transition-colors">
-                  Read →
-                </span>
-              </div>
-            </article>
-          </Link>
+              </article>
+            </Link>
+          )}
 
-          {/* Rest of posts */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 mt-0.5">
             {rest.map((post) => (
               <Link
