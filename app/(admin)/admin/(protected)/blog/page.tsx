@@ -92,11 +92,6 @@ export default async function AdminBlogPage() {
                     <button
                       type="submit"
                       className="text-[0.65rem] tracking-[0.12em] uppercase text-linen/25 hover:text-red-400 transition-colors whitespace-nowrap"
-                      onClick={(e) => {
-                        if (!confirm(`Delete "${post.title}"? This cannot be undone.`)) {
-                          e.preventDefault();
-                        }
-                      }}
                     >
                       Delete
                     </button>

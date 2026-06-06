@@ -1,0 +1,28 @@
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+import { verifySessionToken, SESSION_COOKIE } from "@/lib/session";
+
+export async function proxy(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+  const token = request.cookies.get(SESSION_COOKIE)?.value ?? "";
+  const isAuthenticated = token ? await verifySessionToken(token) : false;
+
+  if (pathname === "/admin/login") {
+    // Already logged in — send to dashboard
+    if (isAuthenticated) {
+      return NextResponse.redirect(new URL("/admin", request.url));
+    }
+    return NextResponse.next();
+  }
+
+  // All other /admin/* routes require authentication
+  if (!isAuthenticated) {
+    return NextResponse.redirect(new URL("/admin/login", request.url));
+  }
+
+  return NextResponse.next();
+}
+
+export const config = {
+  matcher: "/admin/:path*",
+};

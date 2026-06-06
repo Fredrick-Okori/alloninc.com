@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { logoutAction } from "@/app/(admin)/admin/login/actions";
 
 const nav = [
   {
@@ -71,13 +72,21 @@ export default function AdminSidebar() {
       </nav>
 
       {/* Footer */}
-      <div className="px-5 py-5 border-t border-linen/[0.06]">
+      <div className="px-5 py-5 border-t border-linen/[0.06] flex flex-col gap-3">
         <Link
           href="/"
           className="text-[0.68rem] tracking-[0.16em] uppercase text-linen/35 hover:text-amber transition-colors no-underline"
         >
           ← View Site
         </Link>
+        <form action={logoutAction}>
+          <button
+            type="submit"
+            className="text-[0.68rem] tracking-[0.16em] uppercase text-linen/25 hover:text-red-400 transition-colors"
+          >
+            Sign Out
+          </button>
+        </form>
       </div>
     </aside>
   );
