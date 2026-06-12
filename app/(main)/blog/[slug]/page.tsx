@@ -86,6 +86,9 @@ function renderBlock(block: ContentBlock, i: number) {
           ))}
         </ul>
       );
+
+    default:
+      return null;
   }
 }
 

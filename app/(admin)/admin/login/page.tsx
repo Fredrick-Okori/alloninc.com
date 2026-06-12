@@ -28,13 +28,27 @@ export default async function LoginPage({ searchParams }: Props) {
         <form action={loginAction} className="flex flex-col gap-5">
           <div>
             <label className="block text-[0.62rem] tracking-[0.2em] uppercase text-linen/40 mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              required
+              autoFocus
+              autoComplete="email"
+              className="w-full bg-navy border border-linen/[0.12] text-linen/80 px-4 py-3.5 focus:outline-none focus:border-amber/50 transition-colors placeholder:text-linen/20 text-[0.9rem]"
+              placeholder="admin@example.com"
+            />
+          </div>
+
+          <div>
+            <label className="block text-[0.62rem] tracking-[0.2em] uppercase text-linen/40 mb-2">
               Password
             </label>
             <input
               type="password"
               name="password"
               required
-              autoFocus
               autoComplete="current-password"
               className="w-full bg-navy border border-linen/[0.12] text-linen/80 px-4 py-3.5 focus:outline-none focus:border-amber/50 transition-colors placeholder:text-linen/20 text-[0.9rem]"
               placeholder="Enter password"
@@ -43,7 +57,7 @@ export default async function LoginPage({ searchParams }: Props) {
 
           {error && (
             <p className="text-[0.75rem] text-red-400/80 -mt-1">
-              Incorrect password. Please try again.
+              Invalid email or password. Please try again.
             </p>
           )}
 

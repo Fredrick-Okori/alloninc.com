@@ -1,28 +1,49 @@
+import { createServerClient } from "@supabase/ssr";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { verifySessionToken, SESSION_COOKIE } from "@/lib/session";
 
 export async function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  const token = request.cookies.get(SESSION_COOKIE)?.value ?? "";
-  const isAuthenticated = token ? await verifySessionToken(token) : false;
+  let supabaseResponse = NextResponse.next({ request });
 
-  if (pathname === "/admin/login") {
-    // Already logged in — send to dashboard
-    if (isAuthenticated) {
-      return NextResponse.redirect(new URL("/admin", request.url));
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll();
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) =>
+            request.cookies.set(name, value)
+          );
+          supabaseResponse = NextResponse.next({ request });
+          cookiesToSet.forEach(({ name, value, options }) =>
+            supabaseResponse.cookies.set(name, value, options)
+          );
+        },
+      },
     }
-    return NextResponse.next();
-  }
+  );
 
-  // All other /admin/* routes require authentication
-  if (!isAuthenticated) {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  const path = request.nextUrl.pathname;
+  const isLoginPage = path === "/admin/login";
+
+  if (!isLoginPage && !user) {
     return NextResponse.redirect(new URL("/admin/login", request.url));
   }
 
-  return NextResponse.next();
+  if (isLoginPage && user) {
+    return NextResponse.redirect(new URL("/admin", request.url));
+  }
+
+  return supabaseResponse;
 }
 
 export const config = {
-  matcher: "/admin/:path*",
+  matcher: ["/admin/:path*"],
 };

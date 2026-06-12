@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS posts (
   created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
+
 -- Seed: inserted oldest-first so ORDER BY created_at DESC returns newest first
 
 INSERT INTO posts (slug, title, date, category, "readTime", excerpt, content, created_at) VALUES (
