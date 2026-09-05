@@ -1,20 +1,11 @@
 import "@/app/(main)/pricing/pricing.css";
+import Hero from "./Hero";
 
 export default function PricingContent() {
   return (
     <div className="pricing-page-wrapper">
       {/* ── HERO ──────────────────────────────────────────────────────── */}
-      <section className="hero">
-        <div className="hero-eyebrow">Allon Inc · Financial Management Services</div>
-        <h1 className="hero-h1">
-          Most businesses are losing money
-          <br />
-          they <span className="gold">don&apos;t know they&apos;re losing.</span>
-        </h1>
-        <p className="hero-sub">
-          We install the financial management system that catches it - and shows you exactly where to look.
-        </p>
-      </section>
+      <Hero />
 
       {/* ── THE HOOK ───────────────────────────────────────────────────── */}
       <section className="hook">
@@ -32,7 +23,7 @@ export default function PricingContent() {
       </section>
 
       {/* ── COST OF NOT HAVING ──────────────────────────────────────────── */}
-      <section className="stack-section">
+      <section id="cost-table" className="stack-section">
         <div className="stack-inner">
           <div className="sec-label">The real cost of doing nothing</div>
           <h2 className="stack-headline">
@@ -527,3 +518,4 @@ export default function PricingContent() {
     </div>
   );
 }
+
