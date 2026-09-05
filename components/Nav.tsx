@@ -4,12 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const links: [string, string][] = [
-  ["The Problem", "/#diagnosis"],
-  ["The Method", "/#method"],
-  ["The Territory", "/#structure"],
-  ["Pricing", "/pricing"],
+  ["Pricing", "/"],
   ["Blog", "/blog"],
-  ["Engage", "/#engage"],
 ];
 
 export default function Nav() {
@@ -36,12 +32,12 @@ export default function Nav() {
         Allon
       </Link>
 
-      <ul className="hidden md:flex gap-10 list-none m-0 p-0">
+      <ul className="flex gap-6 md:gap-10 list-none m-0 p-0">
         {links.map(([label, href]) => (
           <li key={href}>
             <Link
               href={href}
-              className="text-[0.74rem] tracking-[0.18em] uppercase text-linen/40 no-underline hover:text-linen transition-colors duration-200"
+              className="text-[0.74rem] tracking-[0.18em] uppercase text-linen/60 no-underline hover:text-linen transition-colors duration-200"
             >
               {label}
             </Link>

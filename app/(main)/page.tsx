@@ -1,11 +1,14 @@
 import Grain from "@/components/Grain";
 import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
-import Diagnosis from "@/components/Diagnosis";
-import Method from "@/components/Method";
-import Structure from "@/components/Structure";
-import Engage from "@/components/Engage";
 import Footer from "@/components/Footer";
+import PricingContent from "@/components/PricingContent";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Allon Inc - Financial Management Services & Pricing",
+  description:
+    "We install the financial management system that catches where you are losing money - and shows you exactly where to look.",
+};
 
 export default function Home() {
   return (
@@ -13,11 +16,7 @@ export default function Home() {
       <Grain />
       <Nav />
       <main>
-        <Hero />
-        <Diagnosis />
-        <Method />
-        <Structure />
-        <Engage />
+        <PricingContent />
       </main>
       <Footer />
     </>
