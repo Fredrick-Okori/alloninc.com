@@ -119,6 +119,37 @@ export default async function BlogPage() {
             ))}
           </div>
         </div>
+
+        {/* Blog Bottom Selling Callout */}
+        <div className="px-6 md:px-16 pb-24">
+          <div className="p-8 md:p-12 bg-linen/[0.03] border border-linen/[0.08] flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+            <div className="max-w-2xl">
+              <div className="text-[0.7rem] tracking-[0.2em] uppercase text-amber mb-3">
+                Financial &amp; Structural Management
+              </div>
+              <h3 className="font-serif text-[1.4rem] md:text-[1.8rem] font-[200] text-linen mb-3 leading-tight">
+                The conversation is free. <span className="text-amber italic">The cost of waiting isn&apos;t.</span>
+              </h3>
+              <p className="text-[0.92rem] leading-[1.8] text-linen/55">
+                Most businesses are losing money they don&apos;t know they&apos;re losing. We install the system that catches it - protecting and recovering over UGX 4.5 billion for our clients. Plans start from UGX 3.5M/mo with a 30-day money-back guarantee.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+              <Link
+                href="/pricing"
+                className="text-[0.74rem] tracking-[0.18em] uppercase text-amber border border-amber/35 px-7 py-3.5 hover:bg-amber hover:text-navy transition-all text-center no-underline"
+              >
+                View Plans &amp; Pricing
+              </Link>
+              <a
+                href="mailto:elias@alloninc.com?subject=Request%20a%20Diagnosis%20-%20Allon%20Inc"
+                className="text-[0.74rem] tracking-[0.18em] uppercase text-navy bg-amber px-7 py-3.5 hover:opacity-85 transition-opacity text-center no-underline"
+              >
+                Request a Diagnosis
+              </a>
+            </div>
+          </div>
+        </div>
       </main>
 
       <Footer />

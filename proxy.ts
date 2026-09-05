@@ -26,12 +26,20 @@ export async function proxy(request: NextRequest) {
     }
   );
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
   const path = request.nextUrl.pathname;
   const isLoginPage = path === "/admin/login";
+
+  let user = null;
+  try {
+    const { data } = await supabase.auth.getUser();
+    user = data.user;
+  } catch {
+    // Auth check failed (e.g. missing env vars) — treat as unauthenticated
+    if (!isLoginPage) {
+      return NextResponse.redirect(new URL("/admin/login", request.url));
+    }
+    return NextResponse.next({ request });
+  }
 
   if (!isLoginPage && !user) {
     return NextResponse.redirect(new URL("/admin/login", request.url));

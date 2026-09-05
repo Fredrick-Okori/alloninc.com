@@ -11,27 +11,38 @@ const concerns = [
   "Leadership & decision-making",
   "Culture & behaviour",
   "Growth & scaling",
-  "I don't know yet — that's the problem",
+  "I don't know yet - that's the problem",
 ];
 
-const sizes = ["1–50", "50–250", "250–1,000", "1,000+"];
+const sizes = ["1-50", "50-250", "250-1,000", "1,000+"];
+
+const engagementTiers = [
+  "Essential Plan (3.5M UGX/mo)",
+  "Intelligence Plan (5.5M UGX/mo - Best Value)",
+  "Command Plan (9M+ UGX/mo - Multi-Entity)",
+  "To be determined during preliminary diagnosis",
+];
 
 const conditions = [
   {
-    lead: "This engagement is right for you",
-    body: " if your business is underperforming relative to its potential and conventional advice has not resolved it.",
+    lead: "The conversation is free.",
+    body: " The cost of waiting is not. If we cannot identify clear structural or financial leverage, we will tell you honestly.",
   },
   {
-    lead: "Size is not the qualifier.",
-    body: " Complexity is. This work applies equally at 10 people and 10,000 — wherever structure has become the constraint.",
+    lead: "Proven Track Record.",
+    body: " Our clients have protected and recovered over UGX 4.5 billion through having this management system in place.",
   },
   {
-    lead: "Engagements are selective.",
-    body: " Not every situation is the right fit. The first conversation determines whether there is one.",
+    lead: "30-Day Money-Back Guarantee.",
+    body: " If you complete onboarding and do not feel the engagement is delivering value within 30 days, we refund your first month. No conditions.",
+  },
+  {
+    lead: "No Lock-In.",
+    body: " Month-to-month with 30 days' notice. We keep clients because of the value we deliver - not because of a contract that traps them.",
   },
   {
     lead: "The output is a framework",
-    body: " — not a report. Something structural the business can implement, adapt, and operate from independently.",
+    body: " - not a slide deck. Something structural the business can implement, adapt, and operate from independently.",
   },
 ];
 
@@ -84,7 +95,7 @@ export default function Engage() {
               That is where this engagement begins.
             </p>
             <p className="text-[1rem] leading-[1.9] text-linen/50 mb-10">
-              Write and describe the situation as you actually experience it —
+              Write and describe the situation as you actually experience it -
               not the polished version. The messier and more honest the
               description, the faster the diagnosis.
             </p>
@@ -105,7 +116,7 @@ export default function Engage() {
             </div>
           </Reveal>
 
-          {/* Right — Form */}
+          {/* Right - Form */}
           <Reveal delay={200}>
             {submitted ? (
               <div className="flex flex-col items-start gap-6 py-16">
@@ -183,8 +194,21 @@ export default function Engage() {
                   ))}
                 </select>
 
+                <select
+                  defaultValue=""
+                  className="bg-linen/[0.04] border border-linen/[0.08] text-linen/40 font-[200] text-[0.95rem] tracking-[0.02em] px-[18px] py-[15px] outline-none w-full focus:border-amber/45 focus:bg-linen/[0.06] transition-all cursor-pointer appearance-none"
+                  style={{ fontFamily: "inherit" }}
+                >
+                  <option value="" disabled>Anticipated engagement model / investment</option>
+                  {engagementTiers.map((t) => (
+                    <option key={t} value={t} className="bg-charcoal text-linen">
+                      {t}
+                    </option>
+                  ))}
+                </select>
+
                 <textarea
-                  placeholder="Describe the situation as you actually experience it. Not the polished version — the real one. What is happening that should not be? What has been tried? What hasn't worked?"
+                  placeholder="Describe the situation as you actually experience it. Not the polished version - the real one. What is happening that should not be? What has been tried? What hasn't worked?"
                   required
                   className="bg-linen/[0.04] border border-linen/[0.08] text-linen font-[200] text-[0.8rem] tracking-[0.03em] px-[18px] py-[15px] outline-none w-full h-[120px] placeholder:text-linen/[0.18] placeholder:text-[0.74rem] focus:border-amber/45 focus:bg-linen/[0.06] transition-all resize-none"
                   style={{ fontFamily: "inherit" }}

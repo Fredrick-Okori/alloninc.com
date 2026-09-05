@@ -7,6 +7,7 @@ const links: [string, string][] = [
   ["The Problem", "/#diagnosis"],
   ["The Method", "/#method"],
   ["The Territory", "/#structure"],
+  ["Pricing", "/pricing"],
   ["Blog", "/blog"],
   ["Engage", "/#engage"],
 ];
@@ -48,12 +49,12 @@ export default function Nav() {
         ))}
       </ul>
 
-      <Link
-        href="/#engage"
+      <a
+        href="mailto:elias@alloninc.com?subject=Request%20a%20Diagnosis%20-%20Allon%20Inc"
         className="text-[0.74rem] tracking-[0.18em] uppercase text-amber no-underline border border-amber/30 px-6 py-[11px] hover:bg-amber hover:text-navy transition-all duration-200"
       >
         Request a Diagnosis
-      </Link>
+      </a>
     </nav>
   );
 }

@@ -150,7 +150,34 @@ export default async function PostPage({ params }: Props) {
             {post.content.map((block, i) => renderBlock(block, i))}
           </div>
 
-          <div className="max-w-[680px] mt-20 pt-10 border-t border-linen/[0.07] flex items-center justify-between">
+          {/* Post Bottom Selling Callout */}
+          <div className="max-w-[680px] mt-16 p-8 bg-linen/[0.03] border border-linen/[0.08]">
+            <div className="text-[0.68rem] tracking-[0.2em] uppercase text-amber mb-2">
+              Financial Management &amp; Structural Architecture
+            </div>
+            <p className="font-serif text-[1.2rem] text-linen font-[300] mb-2">
+              Most businesses are losing money they don&apos;t know they&apos;re losing.
+            </p>
+            <p className="text-[0.88rem] text-linen/55 leading-[1.7] mb-6">
+              The delay - not the problem itself - is what destroys value. We install the system that catches cash leakage, margin drift, and operational drag. Plans start from UGX 3.5M/mo.
+            </p>
+            <div className="flex items-center gap-5 flex-wrap">
+              <a
+                href="mailto:elias@alloninc.com?subject=Request%20a%20Diagnosis%20-%20Allon%20Inc"
+                className="text-[0.72rem] tracking-[0.18em] uppercase text-navy bg-amber px-6 py-2.5 no-underline hover:opacity-85 transition-opacity"
+              >
+                Request a Diagnosis
+              </a>
+              <Link
+                href="/pricing"
+                className="text-[0.72rem] tracking-[0.16em] uppercase text-linen/50 hover:text-amber no-underline"
+              >
+                Explore Plans &amp; Pricing →
+              </Link>
+            </div>
+          </div>
+
+          <div className="max-w-[680px] mt-12 pt-10 border-t border-linen/[0.07] flex items-center justify-between">
             <Link
               href="/blog"
               className="inline-flex items-center gap-2 text-[0.72rem] tracking-[0.18em] uppercase text-linen/40 no-underline hover:text-amber transition-colors group"
@@ -158,12 +185,12 @@ export default async function PostPage({ params }: Props) {
               <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
               All Notes
             </Link>
-            <Link
-              href="/#engage"
+            <a
+              href="mailto:elias@alloninc.com?subject=Request%20a%20Diagnosis%20-%20Allon%20Inc"
               className="text-[0.72rem] tracking-[0.18em] uppercase text-amber no-underline border border-amber/30 px-5 py-[10px] hover:bg-amber hover:text-navy transition-all duration-200"
             >
               Request a Diagnosis
-            </Link>
+            </a>
           </div>
         </div>
       </main>

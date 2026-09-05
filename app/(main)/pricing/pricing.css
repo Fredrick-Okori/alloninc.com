@@ -1,0 +1,732 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --navy: #162145;
+  --navy2: #1E2F5E;
+  --navyd: #0D1829;
+  --gold: #C9A84C;
+  --goldd: #A07830;
+  --cream: #FAF8F2;
+  --chalk: #F0EDE4;
+  --slate: #4A5568;
+  --rule: #D4C89A;
+  --white: #FFFFFF;
+  --mid: #6B7A8D;
+  --light: #B0BCCF;
+  --green: #059669;
+  --red: #DC2626;
+}
+
+.pricing-page-wrapper {
+  font-family: 'Lexend', sans-serif;
+  background: var(--cream);
+  color: var(--navy);
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* ── HERO ─────────────────────── */
+.pricing-page-wrapper .hero {
+  background: var(--navy);
+  width: 100%;
+  padding: 120px 40px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.pricing-page-wrapper .hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(201, 168, 76, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.pricing-page-wrapper .hero-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.pricing-page-wrapper .hero-h1 {
+  font-size: clamp(26px, 5vw, 48px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pricing-page-wrapper .hero-h1 .gold {
+  color: var(--gold);
+}
+
+.pricing-page-wrapper .hero-sub {
+  font-size: clamp(14px, 2vw, 17px);
+  font-weight: 300;
+  color: var(--light);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto 0;
+}
+
+/* ── SECTION WRAP ─────────────── */
+.pricing-page-wrapper .wrap {
+  width: 100%;
+  max-width: 980px;
+  padding: 0 24px;
+}
+
+/* ── SECTION LABEL ────────────── */
+.pricing-page-wrapper .sec-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--goldd);
+  text-align: center;
+  margin-bottom: 12px;
+}
+.pricing-page-wrapper .rule-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rule), transparent);
+  margin-bottom: 48px;
+}
+
+/* ── THE HOOK SECTION ─────────── */
+.pricing-page-wrapper .hook {
+  background: var(--chalk);
+  padding: 56px 40px;
+  text-align: center;
+  width: 100%;
+}
+.pricing-page-wrapper .hook-q {
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.pricing-page-wrapper .hook-a {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--slate);
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto;
+}
+.pricing-page-wrapper .hook-a strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+/* ── VALUE STACK ──────────────── */
+.pricing-page-wrapper .stack-section {
+  padding: 72px 24px;
+  width: 100%;
+  background: var(--white);
+}
+.pricing-page-wrapper .stack-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.pricing-page-wrapper .stack-headline {
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.pricing-page-wrapper .stack-sub {
+  font-size: 14px;
+  color: var(--mid);
+  text-align: center;
+  margin-bottom: 48px;
+  line-height: 1.65;
+}
+
+.pricing-page-wrapper .stack-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0;
+}
+.pricing-page-wrapper .stack-table thead th {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+  padding: 0 16px 14px;
+  text-align: left;
+  border-bottom: 2px solid var(--navy);
+}
+.pricing-page-wrapper .stack-table thead th:last-child {
+  text-align: right;
+}
+
+.pricing-page-wrapper .stack-row {
+  border-bottom: 1px solid var(--chalk);
+}
+.pricing-page-wrapper .stack-row td {
+  padding: 16px 16px;
+  vertical-align: top;
+}
+.pricing-page-wrapper .stack-row:nth-child(even) td {
+  background: #FDFCF8;
+}
+.pricing-page-wrapper .item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+.pricing-page-wrapper .item-desc {
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 1.5;
+}
+.pricing-page-wrapper .item-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--slate);
+  text-align: right;
+  white-space: nowrap;
+  padding-top: 4px;
+}
+.pricing-page-wrapper .item-price.strike {
+  text-decoration: line-through;
+  color: var(--rule);
+  font-weight: 400;
+  font-size: 13px;
+}
+
+/* Total row */
+.pricing-page-wrapper .stack-total td {
+  padding: 20px 16px;
+  background: var(--chalk);
+  border-bottom: none;
+}
+.pricing-page-wrapper .total-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--goldd);
+}
+.pricing-page-wrapper .total-label-sub {
+  font-size: 12px;
+  color: var(--mid);
+  font-weight: 400;
+  margin-top: 2px;
+}
+.pricing-page-wrapper .total-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--red);
+  text-align: right;
+  letter-spacing: -0.02em;
+}
+.pricing-page-wrapper .total-price-note {
+  font-size: 11px;
+  color: var(--mid);
+  text-align: right;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* ── THE REVEAL ───────────────── */
+.pricing-page-wrapper .reveal-section {
+  width: 100%;
+  background: var(--navy);
+  padding: 72px 24px;
+}
+.pricing-page-wrapper .reveal-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pricing-page-wrapper .reveal-setup {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--light);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+.pricing-page-wrapper .reveal-vs {
+  font-size: clamp(13px, 2vw, 16px);
+  font-weight: 600;
+  color: var(--light);
+  margin-bottom: 32px;
+  line-height: 1.6;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pricing-page-wrapper .reveal-vs .cross {
+  text-decoration: line-through;
+  color: rgba(176, 188, 207, 0.4);
+}
+.pricing-page-wrapper .reveal-vs .arrow {
+  color: var(--gold);
+  font-size: 20px;
+  display: block;
+  margin: 8px 0;
+}
+
+.pricing-page-wrapper .reveal-price-block {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 64px;
+  border: 2px solid var(--gold);
+  background: rgba(201, 168, 76, 0.05);
+  margin-bottom: 32px;
+  position: relative;
+}
+.pricing-page-wrapper .reveal-price-block::before {
+  content: 'YOUR PRICE';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 4px 14px;
+  white-space: nowrap;
+}
+.pricing-page-wrapper .reveal-from {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(201, 168, 76, 0.6);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.pricing-page-wrapper .reveal-amount {
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.pricing-page-wrapper .reveal-per {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 6px;
+}
+.pricing-page-wrapper .reveal-saving {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green);
+  margin-top: 16px;
+  background: rgba(5, 150, 105, 0.1);
+  padding: 8px 20px;
+  border-radius: 2px;
+}
+
+.pricing-page-wrapper .reveal-reframe {
+  font-size: clamp(13px, 2vw, 16px);
+  font-weight: 400;
+  color: var(--light);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto 40px;
+}
+.pricing-page-wrapper .reveal-reframe .daily {
+  font-size: clamp(16px, 3vw, 22px);
+  font-weight: 700;
+  color: var(--gold);
+  display: block;
+  margin: 8px 0;
+}
+
+/* ── TIERS ────────────────────── */
+.pricing-page-wrapper .tiers-section {
+  width: 100%;
+  padding: 72px 24px;
+  background: var(--cream);
+}
+.pricing-page-wrapper .tiers-inner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+.pricing-page-wrapper .tiers-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.pricing-page-wrapper .tiers-head h2 {
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.pricing-page-wrapper .tiers-head p {
+  font-size: 14px;
+  color: var(--mid);
+}
+
+.pricing-page-wrapper .tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.pricing-page-wrapper .tier {
+  background: var(--white);
+  padding: 36px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  border-top: 3px solid var(--chalk);
+  position: relative;
+}
+.pricing-page-wrapper .tier.featured {
+  background: var(--navy);
+  border-top-color: var(--gold);
+}
+.pricing-page-wrapper .tier.premium {
+  background: var(--chalk);
+  border-top-color: var(--navy2);
+}
+
+.pricing-page-wrapper .tier-badge {
+  position: absolute;
+  top: -1px;
+  right: 24px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+}
+
+.pricing-page-wrapper .tier-name {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 14px;
+}
+.pricing-page-wrapper .featured .tier-name {
+  color: rgba(201, 168, 76, 0.5);
+}
+.pricing-page-wrapper .premium .tier-name {
+  color: var(--mid);
+}
+
+.pricing-page-wrapper .tier-price {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.pricing-page-wrapper .featured .tier-price {
+  color: var(--white);
+}
+.pricing-page-wrapper .tier-price span {
+  font-size: 16px;
+  color: var(--mid);
+  font-weight: 400;
+}
+.pricing-page-wrapper .featured .tier-price span {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.pricing-page-wrapper .tier-tagline {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.pricing-page-wrapper .featured .tier-tagline {
+  color: var(--white);
+}
+
+.pricing-page-wrapper .tier-desc {
+  font-size: 12.5px;
+  color: var(--mid);
+  line-height: 1.55;
+  margin-bottom: 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--chalk);
+}
+.pricing-page-wrapper .featured .tier-desc {
+  color: rgba(255, 255, 255, 0.45);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.pricing-page-wrapper .tier-features {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.pricing-page-wrapper .feat-group-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rule);
+  padding: 12px 0 6px;
+}
+.pricing-page-wrapper .featured .feat-group-label {
+  color: rgba(255, 255, 255, 0.2);
+}
+.pricing-page-wrapper .feat {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 4px 0;
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.4;
+}
+.pricing-page-wrapper .featured .feat {
+  color: rgba(255, 255, 255, 0.78);
+}
+.pricing-page-wrapper .feat-ck {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: 1px;
+  color: var(--green);
+}
+.pricing-page-wrapper .featured .feat-ck {
+  color: #34D399;
+}
+
+.pricing-page-wrapper .tier-cta {
+  margin-top: 28px;
+}
+.pricing-page-wrapper .btn {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  font-family: 'Lexend', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.01em;
+  box-sizing: border-box;
+}
+.pricing-page-wrapper .btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--rule);
+  color: var(--navy);
+}
+.pricing-page-wrapper .btn-outline:hover {
+  border-color: var(--navy);
+  background: var(--chalk);
+}
+.pricing-page-wrapper .btn-gold {
+  background: var(--gold);
+  color: var(--navy);
+}
+.pricing-page-wrapper .btn-gold:hover {
+  background: var(--goldd);
+  transform: translateY(-1px);
+}
+.pricing-page-wrapper .btn-navy {
+  background: var(--navy);
+  color: var(--white);
+}
+.pricing-page-wrapper .btn-navy:hover {
+  background: var(--navy2);
+}
+.pricing-page-wrapper .btn-note {
+  font-size: 11.5px;
+  text-align: center;
+  color: var(--mid);
+  margin-top: 8px;
+}
+.pricing-page-wrapper .featured .btn-note {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── GUARANTEE STRIP ──────────── */
+.pricing-page-wrapper .guarantee {
+  width: 100%;
+  background: var(--navyd);
+  padding: 48px 24px;
+}
+.pricing-page-wrapper .guarantee-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+}
+.pricing-page-wrapper .g-item {
+  text-align: center;
+}
+.pricing-page-wrapper .g-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--gold);
+}
+.pricing-page-wrapper .g-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.pricing-page-wrapper .g-desc {
+  font-size: 12px;
+  color: rgba(176, 188, 207, 0.6);
+  line-height: 1.55;
+}
+
+/* ── FAQ STRIP ────────────────── */
+.pricing-page-wrapper .faq {
+  width: 100%;
+  background: var(--chalk);
+  padding: 64px 24px;
+}
+.pricing-page-wrapper .faq-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.pricing-page-wrapper .faq-head {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.pricing-page-wrapper .faq-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.pricing-page-wrapper .faq-item:last-child {
+  border-bottom: none;
+}
+.pricing-page-wrapper .faq-q {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.pricing-page-wrapper .faq-a {
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.65;
+}
+
+/* ── FINAL CTA ────────────────── */
+.pricing-page-wrapper .final-cta {
+  width: 100%;
+  background: var(--navy);
+  padding: 80px 24px;
+  text-align: center;
+}
+.pricing-page-wrapper .final-cta h2 {
+  font-size: clamp(22px, 4vw, 38px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.pricing-page-wrapper .final-cta h2 .gold {
+  color: var(--gold);
+}
+.pricing-page-wrapper .final-cta p {
+  font-size: 14px;
+  color: var(--light);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 36px;
+}
+.pricing-page-wrapper .cta-big {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'Lexend', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 18px 44px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.15s;
+}
+.pricing-page-wrapper .cta-big:hover {
+  background: var(--goldd);
+  transform: translateY(-1px);
+}
+.pricing-page-wrapper .final-note {
+  font-size: 12px;
+  color: rgba(176, 188, 207, 0.35);
+  margin-top: 16px;
+}
+
+@media (max-width: 800px) {
+  .pricing-page-wrapper .guarantee-inner {
+    grid-template-columns: 1fr;
+  }
+  .pricing-page-wrapper .tiers-grid {
+    grid-template-columns: 1fr;
+  }
+  .pricing-page-wrapper .tier {
+    border-top: none;
+    border-left: 3px solid var(--chalk);
+  }
+  .pricing-page-wrapper .tier.featured {
+    border-left-color: var(--gold);
+  }
+  .pricing-page-wrapper .hero,
+  .pricing-page-wrapper .hook,
+  .pricing-page-wrapper .stack-section,
+  .pricing-page-wrapper .reveal-section,
+  .pricing-page-wrapper .tiers-section,
+  .pricing-page-wrapper .faq,
+  .pricing-page-wrapper .final-cta {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .pricing-page-wrapper .stack-table thead th:nth-child(2),
+  .pricing-page-wrapper .stack-row td:nth-child(2) {
+    display: none;
+  }
+  .pricing-page-wrapper .reveal-price-block {
+    padding: 32px 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-page-wrapper .btn-gold:hover,
+  .pricing-page-wrapper .cta-big:hover {
+    transform: none;
+  }
+}
+

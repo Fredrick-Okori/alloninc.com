@@ -1,10 +1,11 @@
 import Link from "next/link";
 
 const links = [
-  ["The Problem", "#diagnosis"],
-  ["The Method", "#method"],
-  ["What Breaks", "#structure"],
-  ["Engage", "#engage"],
+  ["The Problem", "/#diagnosis"],
+  ["The Method", "/#method"],
+  ["The Territory", "/#structure"],
+  ["Pricing", "/pricing"],
+  ["Engage", "/#engage"],
 ] as const;
 
 export default function Footer() {

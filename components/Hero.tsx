@@ -93,18 +93,34 @@ export default function Hero() {
           className="anim-fade-up flex gap-6 items-center flex-wrap"
           style={{ animationDelay: "1.9s" }}
         >
-          <Link
-            href="#engage"
+          <a
+            href="mailto:elias@alloninc.com?subject=Request%20a%20Diagnosis%20-%20Allon%20Inc"
             className="text-[0.74rem] tracking-[0.2em] uppercase text-navy bg-amber px-9 py-[15px] no-underline hover:opacity-85 transition-opacity"
           >
             Request a Diagnosis
-          </Link>
+          </a>
           <Link
-            href="#diagnosis"
+            href="/pricing"
             className="text-[0.74rem] tracking-[0.18em] uppercase text-linen/50 no-underline border-b border-linen/[0.18] pb-0.5 hover:text-linen hover:border-linen transition-all"
           >
-            See if this applies →
+            Pricing &amp; Plans →
           </Link>
+        </div>
+
+        {/* Value metrics strip */}
+        <div
+          className="anim-fade-up mt-10 pt-7 border-t border-linen/[0.08] flex items-center gap-8 flex-wrap"
+          style={{ animationDelay: "2.1s" }}
+        >
+          <div>
+            <div className="font-serif text-[1.15rem] text-linen font-[300]">UGX 4.5B+</div>
+            <div className="text-[0.66rem] tracking-[0.15em] uppercase text-linen/40">Protected &amp; Recovered</div>
+          </div>
+          <div className="w-px h-7 bg-linen/[0.08] hidden sm:block" />
+          <div>
+            <div className="font-serif text-[1.15rem] text-amber font-[300]">From UGX 3.5M/mo</div>
+            <div className="text-[0.66rem] tracking-[0.15em] uppercase text-linen/40">30-Day Money-Back Guarantee</div>
+          </div>
         </div>
       </div>
 
@@ -138,9 +154,9 @@ export default function Hero() {
         {/* Pull quote */}
         <div className="font-serif font-[200] italic border-t border-linen/[0.07] pt-7 text-linen/40 leading-[1.6]"
           style={{ fontSize: "clamp(1.1rem, 1.8vw, 1.45rem)" }}>
-          &ldquo;A physician does not prescribe before examining.{" "}
+          &ldquo;The problem isn&apos;t that you can&apos;t afford financial management.{" "}
           <em className="not-italic text-linen/75">
-            Neither does this work begin with solutions.
+            It&apos;s that you&apos;re already paying for not having it.
           </em>
           &rdquo;
         </div>

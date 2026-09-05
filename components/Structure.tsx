@@ -1,40 +1,41 @@
 import Reveal from "./Reveal";
+import Link from "next/link";
 
 const rows = [
   {
     breaks: "Decision speed",
     presents: "Meetings multiply, nothing resolves, escalation becomes the default mode of operation",
-    actually: "Authority is distributed without clarity — no one knows who can actually decide",
+    actually: "Authority is distributed without clarity - no one knows who can actually decide",
     domain: "Structure",
   },
   {
     breaks: "Execution consistency",
     presents: "Output varies dramatically by team or individual despite identical process documentation",
-    actually: "The process is documented but not designed — it describes what should happen, not how to make it happen",
+    actually: "The process is documented but not designed - it describes what should happen, not how to make it happen",
     domain: "Operations",
   },
   {
     breaks: "Cross-department value",
     presents: "Each unit performs; the business as a whole underperforms relative to the sum of its parts",
-    actually: "The interfaces between departments are structurally broken — handoffs fail, accountability diffuses",
+    actually: "The interfaces between departments are structurally broken - handoffs fail, accountability diffuses",
     domain: "Departments",
   },
   {
     breaks: "Strategic traction",
     presents: "The strategy is clear in the room where it was agreed; behaviour outside that room is unchanged",
-    actually: "The strategy has not been structurally translated — it lives in language, not in incentives or process",
+    actually: "The strategy has not been structurally translated - it lives in language, not in incentives or process",
     domain: "Strategy",
   },
   {
     breaks: "Leadership output",
     presents: "Capable individuals producing inconsistent or poor decisions at the collective level",
-    actually: "Decision-making structures are broken — the system, not the people, is producing the results",
+    actually: "Decision-making structures are broken - the system, not the people, is producing the results",
     domain: "Leadership",
   },
   {
     breaks: "Cultural coherence",
-    presents: "Values stated, behaviours inconsistent — employees experience a gap between what is said and what is rewarded",
-    actually: "Culture is structurally incentivised, not declared — what is rewarded is the actual culture, regardless of what is written",
+    presents: "Values stated, behaviours inconsistent - employees experience a gap between what is said and what is rewarded",
+    actually: "Culture is structurally incentivised, not declared - what is rewarded is the actual culture, regardless of what is written",
     domain: "Culture",
   },
 ];
@@ -125,6 +126,22 @@ export default function Structure() {
               Fixing the performance without fixing the structure produces
               temporary results.&rdquo;
             </p>
+          </div>
+        </Reveal>
+
+        {/* Cost of delay insight */}
+        <Reveal className="mt-6">
+          <div className="px-8 py-6 bg-linen/[0.03] border border-linen/[0.08] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <p className="text-[0.92rem] text-linen/60 leading-[1.6]">
+              <strong className="text-amber font-[300]">The Cost of Delay:</strong>{" "}
+              The delay - not the problem itself - is what destroys value. Problems that cost UGX 500K to fix in week one cost UGX 5M in month three.
+            </p>
+            <Link
+              href="/pricing"
+              className="text-[0.72rem] tracking-[0.16em] uppercase text-amber hover:underline whitespace-nowrap"
+            >
+              Calculate your exposure →
+            </Link>
           </div>
         </Reveal>
       </div>

@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import Link from "next/link";
 
 const cards = [
   {
@@ -11,7 +12,7 @@ const cards = [
         business continues to behave in ways that contradict the stated
         direction.{" "}
         <strong className="text-linen/65 font-[300]">
-          The strategy has not failed — it has not been structurally embedded.
+          The strategy has not failed - it has not been structurally embedded.
         </strong>
       </>
     ),
@@ -56,7 +57,7 @@ const cards = [
         quality is inconsistent, speed is low, and the same kinds of mistakes
         recur.{" "}
         <strong className="text-linen/65 font-[300]">
-          The issue is not capability — it is the structure within which
+          The issue is not capability - it is the structure within which
           decisions are made.
         </strong>
       </>
@@ -87,7 +88,7 @@ const cards = [
         And the daily reality of the organisation operates by a different,
         unwritten code.{" "}
         <strong className="text-linen/65 font-[300]">
-          Culture is not what is declared — it is what is structurally
+          Culture is not what is declared - it is what is structurally
           incentivised.
         </strong>
       </>
@@ -157,6 +158,27 @@ export default function Diagnosis() {
             </Reveal>
           ))}
         </div>
+
+        {/* Cost of Inaction Callout */}
+        <Reveal className="mt-8">
+          <div className="p-8 md:p-10 bg-linen/[0.03] border border-linen/[0.08] flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div className="max-w-2xl">
+              <div className="text-[0.7rem] tracking-[0.2em] uppercase text-amber mb-2">
+                The Cost of Doing Nothing
+              </div>
+              <p className="font-serif text-[1.2rem] md:text-[1.35rem] font-[200] text-linen/80 leading-[1.5]">
+                &ldquo;None of this shows up as a line item. That&apos;s exactly what makes it so expensive.{" "}
+                <span className="text-amber">Most businesses are losing money they don&apos;t know they&apos;re losing.</span>&rdquo;
+              </p>
+            </div>
+            <Link
+              href="/pricing"
+              className="shrink-0 text-[0.72rem] tracking-[0.18em] uppercase text-amber border border-amber/35 px-6 py-3 hover:bg-amber hover:text-navy transition-all no-underline"
+            >
+              See the Cost of Inaction →
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
